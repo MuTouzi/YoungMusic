@@ -1,0 +1,130 @@
+	/* 唱片效果 */
+	.cover {
+		/* position: relative; */
+		width: 180px;
+		height: 180px;
+		border-radius: 50%;
+		border: 0px;
+		background:
+			/* linear-gradient(90deg, transparent 40%, rgba(245, 246, 250, 0.1) 50%) no-repeat 100% 0px, */
+			linear-gradient(45deg, rgba(245, 246, 250, 0.1) 25%, rgba(245, 246, 250, 0.0) 40%, rgba(245, 246, 250, 0.0) 60%, rgba(245, 246, 250, 0.2)) no-repeat 0px 100%,
+			repeating-radial-gradient(#2a2928 4px, #2a2928 4px, #000 5px, #2a2928 6px);
+		/* background-size: 50% 100%, 100% 50%, 100% 100%; */
+		background-size: 100% 100%, 100% 100%;
+		box-shadow: 0 0 3px 1px #2a2928, inset 0 0 3px 1px #2a2928;
+	}
+
+	.cover img {
+		width: 105%;
+		/* border-radius: 50%; */
+		object-fit: initial;
+		margin: -5% 0 0 -25%;
+		padding-right: 3px;
+		border: 1px solid #ccc;
+		border-radius: 2px;
+		box-shadow: -2px -3px 2px #c2c2c2;
+	}
+
+	/* 外部大框 */
+	#appdiv {
+		border-left: 1px solid #ccc;
+		border-right: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+		width: 60%;
+		height: 100%;
+		background-color: #fff;
+		margin: 0 auto;
+		position: relative;
+		padding: 40px;
+	}
+
+	/* 清除浮动 */
+	#appdiv:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+
+	/* 顶不歌曲信息区域 */
+	.app-top {
+		position: relative;
+		top: 20px;
+	}
+
+	.app-top:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+
+	/* 左部唱片 */
+	.app-fl {
+		float: left;
+		margin-left: 150px;
+	}
+
+	/* 右部介绍 */
+	.app-fr {
+		float: left;
+		margin-left: 70px;
+	}
+
+	.info {
+		margin-top: 20px;
+	}
+
+	.info a {
+		color: #1E9FFF;
+	}
+
+	.info a:hover {
+		text-decoration: underline;
+	}
+
+	.info p {
+		margin-bottom: 15px;
+	}
+
+	.app-title {
+		font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
+		font-size: 28px;
+	}
+
+	.comm {
+		color: #c2c2c2;
+	}
+
+	/* 按钮内的小图标 */
+	.app-btn-box .fa {
+		margin: 0 5px;
+	}
+
+	/* 普通按钮的悬浮样式重写 */
+	.layui-btn-primary:hover {
+		border: 1px solid #e8e8e8;
+	}
+
+	.albumInfo {
+		padding: 0 80px;
+		margin-top: 40px;
+	}
+
+	.albumInfo>div {
+		white-space: normal;
+		word-break: break-all;
+		overflow: hidden;
+		letter-spacing: 1.2px;
+		text-indent: 35px;
+		line-height: 25px;
+		color: rgb(167, 167, 167);
+	}
+
+	/* 分割线 */
+	.hr-red {
+		background-color: rgb(194, 12, 12);
+		height: 3px;
+	}
+
+	#appdiv a:hover {
+		text-decoration: underline;
+	}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6e429ab0039d4e5ca6c034eafdd6686f" Name="Diagram1">
+        <EntityTypeShape EntityType="YoungMusicModel.Album" Width="1.5" PointX="1.5" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="YoungMusicModel.Dynamic" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="YoungMusicModel.DynamicComment" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="YoungMusicModel.MenuComment" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="YoungMusicModel.Singer" Width="1.5" PointX="1.5" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="YoungMusicModel.SongComment" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="YoungMusicModel.SongList" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="YoungMusicModel.SongMenu" Width="1.5" PointX="6" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="YoungMusicModel.Type" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="YoungMusicModel.UserInfo" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="YoungMusicModel.FK__Album__A_SingerI__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="YoungMusicModel.FK__SongList__S_Albu__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="YoungMusicModel.FK__Dynamic__D_UserI__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="YoungMusicModel.FK__DynamicCo__DC_Dy__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="YoungMusicModel.FK__DynamicCo__DC_Fr__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="YoungMusicModel.FK__DynamicCo__DC_To__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="YoungMusicModel.FK__MenuComme__SM_Fr__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="YoungMusicModel.FK__MenuComme__SM_Me__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="YoungMusicModel.FK__MenuComme__SM_To__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="YoungMusicModel.FK__SongList__S_Sing__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="YoungMusicModel.FK__SongComme__SC_Fr__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="YoungMusicModel.FK__SongComme__SC_So__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="YoungMusicModel.FK__SongComme__SC_To__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="YoungMusicModel.FK__SongList__S_Type__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="YoungMusicModel.FK__SongMenu__M_Type__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="YoungMusicModel.FK__SongMenu__M_User__36B12243" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

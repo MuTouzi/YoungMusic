@@ -1,0 +1,227 @@
+	/* 按钮的悬浮 */
+		.layui-btn-primary:hover {
+			border: 1px solid #ccc;
+		}
+
+		/* 左侧菜单标题 layui重写 */
+		.layui-colla-title {
+			background-color: #eee;
+		}
+
+		body {
+			background-color: #F5F5F5;
+		}
+
+		/* 居中 */
+		#app-cendiv {
+			/* border: 1px solid black; */
+			/* background-color: gray; */
+			width: 80%;
+			height: 100%;
+			margin: 0 auto;
+			display: flex;
+		}
+
+		/* 左边 */
+		.app-left {
+			/* height: 100%; */
+			height: 500px;
+			width: 30%;
+			/* background-color: #fff; */
+			/* border: 1px solid yellow; */
+		}
+
+		/* 歌单 */
+		.input-div {
+			position: relative;
+			top: 50px;
+			background-color: #fff;
+		}
+
+		/* 内容li */
+		.layui-show>ul>li {
+			padding: 5px;
+		}
+
+		.layui-show>ul>li>a {
+			height: 50px;
+			line-height: 50px;
+			/* padding-left: 10px; */
+			display: flex;
+		}
+
+		.lidiv {
+			/* border: 1px solid black; */
+			height: 100%;
+			line-height: 150%;
+			margin-left: 20px;
+		}
+
+		.lidiv>p:first-child {
+			font-size: 15px;
+			color: black;
+
+		}
+
+		.lidiv>p:nth-child(2) {
+			margin-top: 10px;
+			font-size: 10px;
+			color: #009688;
+		}
+
+		/* 悬浮 */
+		.layui-show>ul>li:hover {
+			background-color: #F4F2F2;
+		}
+
+		/* 歌单图片 */
+		.layui-show>ul>li img {
+			width: 50px;
+			height: 50px;
+		}
+
+		/* 右边 */
+		.app-right {
+			/* height: 100%; */
+			margin-left: 15px;
+			height: 100%;
+			width: 100%;
+			/* border-left: 1px solid #ccc;
+			    border-right: 1px solid #ccc;
+			    border-bottom: 1px solid #ccc; */
+			/* background-color: blue; */
+			overflow: auto
+		}
+
+		.right-top {
+			/* width: 100%; */
+			height: 300px;
+			/* border: 1px solid black; */
+			background-color: #fff;
+			border-left: 1px solid #ccc;
+			border-right: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			display: flex;
+		}
+
+		/* 头像div */
+		.imgdiv {
+			height: 200px;
+			margin-left: 50px;
+			margin-top: 50px;
+			width: 200px;
+			/* background-color: #00FFFF; */
+		}
+
+		/* 头像 */
+		.imgdiv>img {
+			border: 1px solid #d5d5d5;
+			padding: 3px;
+			display: block;
+			/* background: #fff; */
+			width: 100%;
+			height: 100%;
+		}
+
+		/* 歌单信息 */
+		.menudiv {
+			/* background-color: #007DDB; */
+			height: 200px;
+			width: 60%;
+			margin-left: 40px;
+			margin-top: 80px;
+		}
+
+		/* 歌单名称 */
+		.menudiv>p {
+			font-size: 20px;
+		}
+
+		.menudiv>p>span {
+			font-size: 30px;
+			font-weight: bold;
+			margin: 0 10px;
+		}
+
+		.divinfo {
+			font-size: 0.8em;
+			margin: 15px 0 30px 0;
+		}
+
+		.divinfo i {
+			font-size: 1.2em;
+			margin: 0 5px;
+			color: rgb(57, 61, 73, 0.8);
+		}
+
+		.divinfo u {
+			/* font-size: 1.2em; */
+			margin: 0 5px;
+		}
+
+		.btndiv {
+			margin-top: 20px;
+		}
+
+		.btndiv i {
+			margin: 0 5px;
+		}
+
+		/* 排行div */
+		.right-paihang {
+			border: #01AAED;
+			/* border: 1px solid green; */
+			/* margin-top: 20px; */
+		}
+
+		/* 歌曲排行榜标题 */
+		.ph-div-h {
+			margin-top: 30px;
+		}
+
+		.ph-h {
+			margin-left: 12px;
+			font-size: 20px;
+			font-weight: bold;
+			color: #000;
+		}
+
+		/* 副标题 */
+		.ph-span {
+			margin-left: 20px;
+			font-size: 10px;
+		}
+
+		/*播放次数 */
+		.ph-span-count {
+			float: right;
+			margin-right: 100px;
+			margin-top: 10px;
+		}
+
+		/* 排行div */
+		.phdiv {
+			width: 100%;
+			height: 100%;
+		}
+
+		/* 评论div */
+		#pl-div {
+			width: 100%;
+			height: 100%;
+			border: #01AAED;
+			/* border: 1px solid green; */
+			/* margin-top: 20px; */
+		}
+
+		.hoverid {
+			background-color: #000000;
+		}
+
+		/* 评论里的用户头像 */
+		.pl-img>img {
+			margin-left: 20px;
+			margin-top: 20px;
+			width: 80px;
+			height: 80px;
+		}

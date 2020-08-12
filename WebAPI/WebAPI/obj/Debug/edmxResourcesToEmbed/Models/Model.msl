@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="YoungMusicModelStoreContainer" CdmEntityContainer="YoungMusicEntities">
+    <EntitySetMapping Name="Album">
+      <EntityTypeMapping TypeName="YoungMusicModel.Album">
+        <MappingFragment StoreEntitySet="Album">
+          <ScalarProperty Name="A_Id" ColumnName="A_Id" />
+          <ScalarProperty Name="A_SingerId" ColumnName="A_SingerId" />
+          <ScalarProperty Name="A_Name" ColumnName="A_Name" />
+          <ScalarProperty Name="A_Info" ColumnName="A_Info" />
+          <ScalarProperty Name="A_Song" ColumnName="A_Song" />
+          <ScalarProperty Name="A_Time" ColumnName="A_Time" />
+          <ScalarProperty Name="A_Img" ColumnName="A_Img" />
+          <ScalarProperty Name="A_PlayCount" ColumnName="A_PlayCount" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dynamic">
+      <EntityTypeMapping TypeName="YoungMusicModel.Dynamic">
+        <MappingFragment StoreEntitySet="Dynamic">
+          <ScalarProperty Name="D_imgs" ColumnName="D_imgs" />
+          <ScalarProperty Name="D_SongID" ColumnName="D_SongID" />
+          <ScalarProperty Name="D_Id" ColumnName="D_Id" />
+          <ScalarProperty Name="D_UserId" ColumnName="D_UserId" />
+          <ScalarProperty Name="D_Title" ColumnName="D_Title" />
+          <ScalarProperty Name="D_UpTime" ColumnName="D_UpTime" />
+          <ScalarProperty Name="D_Content" ColumnName="D_Content" />
+          <ScalarProperty Name="D_GoodCount" ColumnName="D_GoodCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DynamicComment">
+      <EntityTypeMapping TypeName="YoungMusicModel.DynamicComment">
+        <MappingFragment StoreEntitySet="DynamicComment">
+          <ScalarProperty Name="DC_UpTime" ColumnName="DC_UpTime" />
+          <ScalarProperty Name="DC_Id" ColumnName="DC_Id" />
+          <ScalarProperty Name="DC_Pid" ColumnName="DC_Pid" />
+          <ScalarProperty Name="DC_Dynamic" ColumnName="DC_Dynamic" />
+          <ScalarProperty Name="DC_From_User" ColumnName="DC_From_User" />
+          <ScalarProperty Name="DC_Content" ColumnName="DC_Content" />
+          <ScalarProperty Name="DC_To_User" ColumnName="DC_To_User" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuComment">
+      <EntityTypeMapping TypeName="YoungMusicModel.MenuComment">
+        <MappingFragment StoreEntitySet="MenuComment">
+          <ScalarProperty Name="SM_UpTime" ColumnName="SM_UpTime" />
+          <ScalarProperty Name="SM_Id" ColumnName="SM_Id" />
+          <ScalarProperty Name="SM_Pid" ColumnName="SM_Pid" />
+          <ScalarProperty Name="SM_Menu" ColumnName="SM_Menu" />
+          <ScalarProperty Name="SM_From_User" ColumnName="SM_From_User" />
+          <ScalarProperty Name="SM_Content" ColumnName="SM_Content" />
+          <ScalarProperty Name="SM_To_User" ColumnName="SM_To_User" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Singer">
+      <EntityTypeMapping TypeName="YoungMusicModel.Singer">
+        <MappingFragment StoreEntitySet="Singer">
+          <ScalarProperty Name="S_Id" ColumnName="S_Id" />
+          <ScalarProperty Name="S_Name" ColumnName="S_Name" />
+          <ScalarProperty Name="S_Img" ColumnName="S_Img" />
+          <ScalarProperty Name="S_Info" ColumnName="S_Info" />
+          <ScalarProperty Name="S_Audit_State" ColumnName="S_Audit_State" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SongComment">
+      <EntityTypeMapping TypeName="YoungMusicModel.SongComment">
+        <MappingFragment StoreEntitySet="SongComment">
+          <ScalarProperty Name="SC_UpTime" ColumnName="SC_UpTime" />
+          <ScalarProperty Name="SC_Id" ColumnName="SC_Id" />
+          <ScalarProperty Name="SC_Pid" ColumnName="SC_Pid" />
+          <ScalarProperty Name="SC_Song" ColumnName="SC_Song" />
+          <ScalarProperty Name="SC_From_User" ColumnName="SC_From_User" />
+          <ScalarProperty Name="SC_Content" ColumnName="SC_Content" />
+          <ScalarProperty Name="SC_To_User" ColumnName="SC_To_User" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SongList">
+      <EntityTypeMapping TypeName="YoungMusicModel.SongList">
+        <MappingFragment StoreEntitySet="SongList">
+          <ScalarProperty Name="WYID" ColumnName="WYID" />
+          <ScalarProperty Name="S_Id" ColumnName="S_Id" />
+          <ScalarProperty Name="S_Name" ColumnName="S_Name" />
+          <ScalarProperty Name="S_Type" ColumnName="S_Type" />
+          <ScalarProperty Name="S_Singer" ColumnName="S_Singer" />
+          <ScalarProperty Name="S_Url" ColumnName="S_Url" />
+          <ScalarProperty Name="S_Cover" ColumnName="S_Cover" />
+          <ScalarProperty Name="S_PlayCount" ColumnName="S_PlayCount" />
+          <ScalarProperty Name="S_CollectCount" ColumnName="S_CollectCount" />
+          <ScalarProperty Name="S_UpTime" ColumnName="S_UpTime" />
+          <ScalarProperty Name="S_Lyric" ColumnName="S_Lyric" />
+          <ScalarProperty Name="S_Album" ColumnName="S_Album" />
+          <ScalarProperty Name="S_Audit_State" ColumnName="S_Audit_State" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SongMenu">
+      <EntityTypeMapping TypeName="YoungMusicModel.SongMenu">
+        <MappingFragment StoreEntitySet="SongMenu">
+          <ScalarProperty Name="M_Id" ColumnName="M_Id" />
+          <ScalarProperty Name="M_UserId" ColumnName="M_UserId" />
+          <ScalarProperty Name="M_Name" ColumnName="M_Name" />
+          <ScalarProperty Name="M_Info" ColumnName="M_Info" />
+          <ScalarProperty Name="M_SongId" ColumnName="M_SongId" />
+          <ScalarProperty Name="M_CreatTime" ColumnName="M_CreatTime" />
+          <ScalarProperty Name="M_Img" ColumnName="M_Img" />
+          <ScalarProperty Name="M_Type" ColumnName="M_Type" />
+          <ScalarProperty Name="M_PlayCount" ColumnName="M_PlayCount" />
+          <ScalarProperty Name="M_CollectCount" ColumnName="M_CollectCount" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Type">
+      <EntityTypeMapping TypeName="YoungMusicModel.Type">
+        <MappingFragment StoreEntitySet="Type">
+          <ScalarProperty Name="T_Id" ColumnName="T_Id" />
+          <ScalarProperty Name="T_Name" ColumnName="T_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="YoungMusicModel.UserInfo">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="U_Id" ColumnName="U_Id" />
+          <ScalarProperty Name="U_Name" ColumnName="U_Name" />
+          <ScalarProperty Name="U_Pwd" ColumnName="U_Pwd" />
+          <ScalarProperty Name="U_Email" ColumnName="U_Email" />
+          <ScalarProperty Name="U_Info" ColumnName="U_Info" />
+          <ScalarProperty Name="U_Tell" ColumnName="U_Tell" />
+          <ScalarProperty Name="U_Img" ColumnName="U_Img" />
+          <ScalarProperty Name="U_Hobby" ColumnName="U_Hobby" />
+          <ScalarProperty Name="U_Fans" ColumnName="U_Fans" />
+          <ScalarProperty Name="U_Follow" ColumnName="U_Follow" />
+          <ScalarProperty Name="U_CollectSongMenu" ColumnName="U_CollectSongMenu" />
+          <ScalarProperty Name="U_CreatSongMenu" ColumnName="U_CreatSongMenu" />
+          <ScalarProperty Name="U_Like" ColumnName="U_Like" />
+          <ScalarProperty Name="U_Gender" ColumnName="U_Gender" />
+          <ScalarProperty Name="U_Birthday" ColumnName="U_Birthday" />
+          <ScalarProperty Name="U_RegistrationTime" ColumnName="U_RegistrationTime" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

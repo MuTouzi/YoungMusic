@@ -1,0 +1,154 @@
+#appdiv {
+		background-color: #F5F5F5;
+		box-sizing: border-box;
+	}
+
+	/* 居中 */
+	#app-cendiv {
+		width: 80%;
+		height: 100%;
+		margin: 0 auto;
+		display: flex;
+	}
+
+	/* 左边 */
+	.app-left {
+		height: 100%;
+		width: 20%;
+		background-color: #F9F9F9;
+		border: 1px solid #DCDCDC;
+	}
+
+	/* 左边left的div */
+	.leftdiv {
+		margin-top: 40px;
+		margin-left: 10px;
+		height: 100%;
+		width: 80%;
+		/* border: 1px solid black; */
+	}
+
+	/* 一级ul */
+	.yiul>li {
+		font-size: 16px;
+		padding-left: 20px;
+		margin-top: 10px;
+	}
+
+	/* 二级ul */
+	.erul>li {
+		font-size: 12px;
+		padding-left: 20px;
+		margin-top: 10px;
+	}
+
+	/* 性别悬浮 */
+	.erul>li:hover {
+		border-bottom: 1px solid black;
+	}
+
+	/* 性别选择 */
+	.sexli {
+		border: 1px solid black;
+		border-radius:0PX 50PX 50PX 0px;
+		background-color: #00FFFF;
+	}
+
+	/* 右边 */
+	.app-right {
+		margin-left: 15px;
+		height: 100%;
+		width: 100%;
+		overflow: auto;
+		background-color: #fff;
+		border: 1px solid #DCDCDC;
+	}
+
+	/*右边的子div  */
+	.righrdiv {
+		margin-top: -10px;
+		height: 90%;
+		width: 100%;
+	}
+
+
+
+	.title {
+		width: 95%;
+		margin: 0 auto;
+		font-size: 1.2em;
+		padding: 15px;
+	}
+
+	.title .t-span {
+		position: relative;
+		top: 15px;
+		font-size: 35px;
+	}
+
+
+
+	/* 更多按钮 */
+
+	.con_gengduo {
+		font-size: 0.7em;
+		position: absolute;
+		right: 300px;
+		margin-top: 42px;
+		margin-right: -100px;
+	}
+
+	/* 更多按钮的a标签悬浮添加下划线 */
+	.con_gengduo a:hover {
+		color: #000;
+		text-decoration: underline;
+	}
+
+	/* 放歌单的div */
+	#gedandiv {
+		margin: 0 auto;
+	}
+
+	/* 歌单items */
+	.gedan-items {
+		flex: 1;
+		text-align: center;
+	}
+
+	/* 歌单图片 */
+	.dlgedan>dt>img {
+		width: 140px;
+		height: 140px;
+		box-shadow: 0 0 3px 1px #ccc;
+	}
+
+
+	/* @media only screen and (min-width: 768.1px) {
+			.col-md-2 {
+				width: 18.1%;
+				text-align: center;
+			}			
+		} */
+
+	.col-md-2 {
+		width: 17.5%;
+		text-align: center;
+	}
+
+	.row {
+		box-sizing: border-box;
+
+	}
+
+	.row:after {
+		display: table;
+		content: " ";
+		clear: both;
+	}
+
+
+	[class*='col-'] {
+		float: left;
+		height: 200px;
+		padding: 10px;
+	}

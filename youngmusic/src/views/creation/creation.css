@@ -1,0 +1,21 @@
+#boxdiv {
+  position: relative;
+  height: 270px;
+  width: 100%;
+  /* background-color: black; */
+}
+
+.app-box {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+}
+
+.app-box button {
+  margin: 0 50px;
+  font-size: 1.5em;
+  height: 60px;
+  width: 300px;
+}

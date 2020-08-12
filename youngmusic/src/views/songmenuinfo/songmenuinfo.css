@@ -1,0 +1,481 @@
+ body {
+        background-color: #F5F5F5;
+        font-size: 14px;
+    }
+    /* 居中 */
+    #app-cendiv {
+        /* border: 1px solid black;s */
+        /* background-color: black; */
+        width: 1000px;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    /* 左边 */
+    .app-left {
+        height: 100%;
+        width: 700px;
+		/* background-color: #B6FFF; */
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+		/* border: 1px solid black; */
+    }
+	
+	.left-center {
+	    width: 90%;
+	    /* background-color: #000000; */
+	    height: 100%;
+	    /* background-color: blue; */
+	    /* border: 1px solid darkgray; */
+	    margin: 35px auto;
+	}
+	/* 用户头像一行 */
+	.divinfo {
+	    display: flex;
+	}
+	
+	.divinfo-name {
+	    margin-left: 20px;
+	    margin-top: 20px;
+	    font-size: 0.8em;
+	    line-height: 40px;
+	}
+	
+	/* 用户名 */
+	.divinfo-name>a {
+	    margin-left: -15px;
+	    font-size: 15px;
+	    color: #01AAED;
+	}
+	
+	/* 创建时间 */
+	.divinfo-name>span {
+	    margin-left: 10px;
+	    /* font-size: 20px; */
+	    color: #000;
+	}
+	
+	
+	/* 用户头像 */
+	.divinfo>img {
+	    margin-top: 20px;
+	    width: 40px;
+	    height: 40px;
+	    display: block;
+	    object-fit: initial;
+	    /* border-radius: 50%; */
+	}
+	
+	.btndiv {
+	    margin-top: 20px;
+	}
+	
+	.btndiv i {
+	    margin: 0 5px;
+	}
+	
+	
+	.divinfo-name {
+	    margin-left: 20px;
+	    margin-top: 20px;
+	    font-size: 0.8em;
+	    line-height: 40px;
+	}
+	
+	/* 用户名 */
+	.divinfo-name>a {
+	    margin-left: -15px;
+	    font-size: 15px;
+	    color: #01AAED;
+	}
+	
+	
+	/* 歌单信息 */
+	.menudiv {
+	    /* background-color: #007DDB; */
+	    height: 100%;
+	    width: 60%;
+	    margin-left: 40px;
+	    margin-top: 50px;
+	}
+	/* .menudiv:after{content:"";display:block;clear:both;} */
+	
+	/* 歌单名称 */
+	.menudiv>p {
+	    font-size: 20px;
+	}
+	
+	.menudiv>p>span {
+	    font-size: 30px;
+	    font-weight: bold;
+	    margin: 0 10px;
+	}
+	
+	.right-top {
+	    /* width: 100%; */
+	    /* height: 320px; */
+	    /* border: 1px solid black; */
+	    /* background-color: #fff; */
+	    display: flex;
+	}
+
+/* 介绍信息 */
+.introduceInfo{
+	position: relative;
+	left: -220px;
+	width: 160%;
+	white-space: normal;
+	word-break: break-all;
+	overflow: hidden;
+	letter-spacing: 1.1px;
+	/* line-height: 25px; */
+	color: rgb(167, 167, 167);
+}
+.introduceInfo p:nth-child(2){
+	text-indent:35px;
+}
+
+	/* 相关推荐 */
+	.xgtj{
+		font-size: 20px;
+		/* color: #1e9fff; */
+	}
+	
+	/* 头像div */
+	.imgdiv {
+		height: 180px;
+		margin-left: 50px;
+		margin-top: 50px;
+		width: 180px;
+	}
+		
+		/* 头像 */
+		.imgdiv>img {
+		    border: 1px solid #d5d5d5;
+		    padding: 3px;
+		    display: block;
+		    width: 100%;
+		    height: 100%;
+		}
+		
+		/* 排行div */
+		.right-paihang {
+		    border: #01AAED;
+		    /* border: 1px solid green; */
+		    /* margin-top: 20px; */
+		}
+		
+		/* 歌曲排行榜标题 */
+		.ph-div-h {
+		    margin-top: 30px;
+		}
+		/* 歌曲列表 */
+		.ph-h {
+		    margin-left: 12px;
+		    font-size: 20px;
+		    font-weight: bold;
+		    color: #000;
+		}
+		
+		/* 副标题 */
+		.ph-span {
+		    margin-left: 20px;
+		    font-size: 10px;
+		}
+		
+		.ph-span-count {
+		    float: right;
+		    margin-right: 100px;
+		    margin-top: 10px;
+		}
+		
+		/* 排行div */
+		.phdiv {
+		    width: 100%;
+		    height: 100%;
+		}	
+		
+    /* 右边 */
+    .app-right {
+        height: 100%;
+        width: 300px;
+        background-color: #fff;
+    }
+
+    .user-friend>a {
+        float: right;
+        cursor: pointer;
+    }
+
+    /* 感兴趣的人 */
+    .user-friend {
+        background-color: white;
+        /* margin-top: 20px; */
+        padding: 20px;
+    }
+
+    /* 明星uldiv */
+    .userul>ul>li {
+        height: 60px;
+        line-height: 60px;
+		padding-left: 10px;
+		cursor: pointer;
+        /* display: flex; */
+    }
+
+.lidiv2{
+	padding-top: 8px;
+	 display: flex;
+	 margin-top: 10px;
+	 /* border: 1px solid black; */
+}
+    /* 歌单图片 */
+    .userul>ul>li>div>img {
+        width: 45px;
+        height: 45px;
+    }
+
+    /* 歌歌单简介  */
+    .lidiv {
+        /* border: 1px solid black; */
+        height: 100%;
+        line-height: 150%;
+        margin-left: 20px;
+    }
+
+    /* 将歌单名，和标签限制长度 */
+    .lidiv>p {
+        width: 130px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+	/* 推荐歌单 */
+	.showli{
+		/* border-bottom: 1px solid #1E9FFF; */
+		background-color: #F5F4F4;
+		border-radius: 5px;
+	}
+	
+	.showli:hover{
+		background-color: #1E9FFF;
+		transition: all 0.4s;
+		color: #fff;
+	}
+	
+	/* ====================================== */
+	/* 评论区域 */
+	.app-comment {
+		margin-top: 80px;
+		/* padding: 0 50px; */
+	}
+	
+	.app-comment .app-title {
+		font-size: 20px;
+		margin-left: 12px;
+	}
+	
+	.comm-number {
+		font-size: 12px;
+		margin-left: 10px;
+		color: rgba(45, 52, 54, 0.8);
+	}
+	
+	/* 分割线 */
+	.hr-red {
+		background-color: rgb(194, 12, 12);
+		height: 3px;
+	}
+	
+	/* 对话框的样式 */
+	.Dialog {
+		display: flex;
+	}
+	
+	/* 圆形头像 */
+	.avatar {
+		width: 54px;
+		max-width: 54px;
+		height: 54px;
+		border-radius: 50%;
+		object-fit: cover;
+		flex: 1;
+		margin-top: 10px;
+	}
+	
+	.Dialog .content {
+		margin-left: 10px;
+		flex: 2;
+	}
+	
+	.Dialog .talk {
+		width: 100%;
+		height: 80px;
+		display: inline-block;
+		border: 1px solid #ddd;
+		border-radius: 3px;
+		font-size: 14px;
+		background-color: #fff;
+		position: relative;
+	}
+	
+	.Dialog .talk::before {
+		content: '';
+		position: absolute;
+		width: 6px;
+		height: 6px;
+		background: linear-gradient(to top, #ddd, #ddd) no-repeat, linear-gradient(to right, #ddd, #ddd) no-repeat, linear-gradient(135deg, #fff, #fff 6px, hsla(0, 0%, 100%, 0) 6px) no-repeat;
+		background-size: 6px 1px, 1px 6px, 6px 6px;
+		transform: rotate(-45deg);
+		left: -4px;
+		top: 30px;
+	}
+	
+	.Dialog .textarea {
+		width: 99%;
+		height: 75px;
+		border: 0px;
+		margin: 5px 0 0 5px;
+		resize: none;
+	}
+	
+	.commSub .wordCount {
+		color: rgba(45, 52, 54, 0.8);
+		margin-right: 10px;
+	}
+	
+	/* 清除浮动 */
+	.commSub:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	
+	.splendid {
+		padding-top: 40px;
+	}
+	
+	.splendid .comment-title {
+		font-size: 12px;
+		font-weight: bold;
+		margin-bottom: -6px;
+		margin-left: 12px;
+	}
+	
+	/* 评论详细列表 */
+	.pl-info-all {
+		/* background-color: #F5F5F5; */
+		padding: 0 8px;
+		/* border: 1px solid #c8c8c8; */
+		position: relative;
+	}
+	
+	.pl-info-all ul li {
+		display: flex;
+		font-family: Arial, Helvetica, sans-serif;
+		/* line-height: 40px; */
+		font-size: 13px;
+		/* margin-bottom: 5px; */
+		padding: 15px 0;
+		border-bottom: 1px dashed #c8c8c8;
+		word-break: break-all; 
+	}
+	
+	.pl-u-info ul li {
+		border: none;
+		line-height: 30px;
+	}
+	
+	.pl-info-all .pl-tx {
+		/* border: 1px solid #d5d5d5; */
+		/* padding: 3px; */
+		display: block;
+		width: 45px;
+		height: 45px;
+		/* border-radius: 20px; */
+	}
+	
+	.pl-u-info {
+		width: 100%;
+		padding-right: 20px;
+	}
+	
+	.pl-u-info img {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		border-radius: 10px;
+	}
+	
+	.pl-info-all ul li a {
+		color: #01AAED;
+		margin-left: 5px;
+	}
+	
+	.pl-info-all .pl-u-info {
+		margin: 5px 0 0 5px;
+	}
+	
+	#app a:hover {
+		text-decoration: underline;
+	}
+
+/* 评论的样式 */
+.talk>p:nth-child(2){
+	text-align: right;
+	padding:2px 4px 0 0;
+}
+
+.talk-inner{
+	width: 97%;
+}
+
+.pl-u-info:hover .msg{
+	/* display: inline; */
+	opacity: 1;
+	transition: all 0.5s;
+}
+
+.msg{
+	z-index: 2;
+	/* display: none; */
+	text-align: center;
+	transition: all 0.5s;
+	cursor: pointer;
+	color: #1E9FFF;
+	position: absolute;
+	right: 50px;
+	opacity: 0;
+	transition: all 0.5s;
+}
+
+.msg:hover{
+	text-decoration: underline;
+}
+
+.msg2{
+	right: 23px;
+	top:15px;
+}
+
+.huifu {
+	width: 99%;
+	min-height: 50px;
+	height: 50px;
+	margin: 5px 0 0 5px;
+	resize: none;
+}
+
+.reply{
+	padding-left: 20px;
+	background: #e6e6e68a;
+	margin-top: 10px;
+}
+
+.reply-inner{
+	padding: 10px;
+	padding-right: 50px;
+	position: relative;
+}

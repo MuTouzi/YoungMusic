@@ -1,0 +1,273 @@
+	/* 最大的div */
+	#boxapp {
+		/* background-color: #F5F5F5; */
+		margin: 0px auto;
+		width: 70%;
+	}
+
+	/* 居中的div */
+	#box-cendiv {
+		/* background-color: #FFFFFF;
+		border: 1px solid #009F95; */
+		height: 100%;
+		/* height: 300px; */
+	}
+
+	/* 搜索框的div */
+	.searchdiv {
+		/* margin-top: 50px; */
+	}
+
+	.search_form {
+		/* width: 100%; */
+		height: 42px;
+		margin-left:25%;
+		margin-top: 10%;
+	}
+
+	/*左边输入框设置样式*/
+	.input_text {
+		width: 400px;
+		height: 40px;
+		border: 1px solid #bf2500;
+		/*清除掉默认的padding*/
+		padding: 0px;
+		/*提示字首行缩进*/
+		text-indent: 10px;
+		/*去掉蓝色高亮框*/
+		outline: none;
+		/*用浮动解决内联元素错位及小间距的问题*/
+		float: left;
+	}
+
+	.input_sub {
+		width: 100px;
+		height: 42px;
+		background: #bf2500;
+
+		/*去掉submit按钮默认边框*/
+		border: 0px;
+		/*改成右浮动也是可以的*/
+		float: left;
+		color: white;
+		/*搜索的字体颜色为白色*/
+		cursor: pointer;
+		/*鼠标变为小手*/
+	}
+
+	/* 歌曲列表的div */
+	.songlistdiv {
+		margin-top: 70px;
+		/* background-color: pink;
+		border: 1px solid #009F95; */
+	}
+	
+	
+/* 收藏 */
+#addmenudiv {
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}			
+.addmenu {
+	width: 500px;
+	height: 400px;
+	background-color: #fff;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-100%, -90%);
+	box-shadow: 0 0 10px -1px #393D49;
+	border-radius: 5px;
+}
+
+.addmenu .l-top {
+	height: 40px;
+	background-color: #393D49;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	margin-bottom: 35px;
+	/* cursor: move; */
+}
+
+.addmenu .l-title {
+	font-size: 1em;
+	color: #fff;
+	position: relative;
+	left: 20px;
+	line-height: 40px;
+}
+
+.close {
+	font-size: 1.5em;
+	position: absolute;
+	right: 10px;
+	line-height: 40px;
+	/* color: #fff; */
+	-webkit-text-stroke: 3px #393D49;
+	color: #fff;
+	cursor: pointer;
+}
+
+.mids {
+	width: 70%;
+	height: 70%;
+	margin: auto;
+	/* overflow-y: scroll; */
+	/* border: 1px solid black; */
+	overflow-y: auto;
+
+}
+
+/* 滚动条样式 */
+.mids::-webkit-scrollbar {
+	width: 5px;
+	/* height: 10px; */
+	border-radius: 10px;
+}
+.mids::-webkit-scrollbar-button,
+.mids::-webkit-scrollbar-button:vertical {
+	display: none;
+}
+.mids::-webkit-scrollbar-track,
+.mids::-webkit-scrollbar-track:vertical {
+	border-radius: 5px;
+}
+.mids::-webkit-scrollbar-track-piece {
+	background-color: rgba(211, 211, 211, 0.9);
+	box-shadow: inset 0 0 2px #717171; 
+	border-radius: 5px;
+}
+.mids::-webkit-scrollbar-thumb,
+.mids::-webkit-scrollbar-thumb:vertical {
+	border-radius: 10px;
+	/* -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,1); */
+	box-shadow: inset 0 0 1px #717171;
+	background-color: #393d49;
+}
+.mids::-webkit-scrollbar-thumb:hover,
+.mids::-webkit-scrollbar-thumb:vertical:hover {
+	background: #393d49e5;
+}
+
+.mids ul>li {
+	height: 50px;
+	width: 100%;
+}
+
+.add{
+	background-color: #1e9fff;
+}
+.hover:hover{
+	background-color: #F5F4F4;
+}
+
+.hover {
+	margin: 2px 0;
+	display: flex;
+	background-color: #f5f4f48c;
+}
+
+.hover img {
+	width: 50px;
+	height: 50px;
+}
+
+.newadd {
+	line-height: 50px;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.lidivadd {
+	line-height: 25px;
+	margin-left: 10px;
+}
+
+.pname {
+	color: #000000;
+}
+
+.pcount {
+	color: #1e9fff;
+}
+
+/* 新建歌单 */
+#xj {
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+.logindiv {
+	width: 250px;
+	height: 200px;
+	background-color: #fff;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-175%, -125%);
+	box-shadow: 0 0 10px -1px #393D49;
+	border-radius: 5px;
+}
+
+.logindiv .l-top {
+	height: 40px;
+	background-color: #393D49;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	margin-bottom: 35px;
+	/* cursor: move; */
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+.logindiv .l-title {
+	font-size: 1em;
+	color: #fff;
+	position: relative;
+	left: 20px;
+	line-height: 40px;
+}
+
+.close {
+  font-size: 1.5em;
+  position: absolute;
+  right: 10px;
+  line-height: 40px;
+  /* color: #fff; */
+  -webkit-text-stroke: 3px #393d49;
+  color: #fff;
+  cursor: pointer;
+}
+
+.mid {
+  width: 70%;
+  height: 60%;
+  margin: auto;
+}
+
+.textmenu {
+  width: 100%;
+}
+
+.mid button {
+  width: 50%;
+  margin-top: 10px;
+}
+
+.divbtn {
+  display: flex;
+}

@@ -1,0 +1,1036 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="YoungMusicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Album">
+          <Key>
+            <PropertyRef Name="A_Id" />
+          </Key>
+          <Property Name="A_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="A_SingerId" Type="int" Nullable="false" />
+          <Property Name="A_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="A_Info" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="A_Song" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="A_Time" Type="smalldatetime" Nullable="false" />
+          <Property Name="A_Img" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="A_PlayCount" Type="int" />
+          <Property Name="IsDelete" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dynamic">
+          <Key>
+            <PropertyRef Name="D_Id" />
+          </Key>
+          <Property Name="D_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="D_UserId" Type="int" Nullable="false" />
+          <Property Name="D_Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="D_UpTime" Type="smalldatetime" Nullable="false" />
+          <Property Name="D_Content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="D_GoodCount" Type="int" />
+          <Property Name="D_SongID" Type="int" />
+          <Property Name="D_imgs" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="DynamicComment">
+          <Key>
+            <PropertyRef Name="DC_Id" />
+          </Key>
+          <Property Name="DC_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DC_Pid" Type="int" />
+          <Property Name="DC_Dynamic" Type="int" Nullable="false" />
+          <Property Name="DC_From_User" Type="int" Nullable="false" />
+          <Property Name="DC_Content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DC_To_User" Type="int" Nullable="false" />
+          <Property Name="DC_UpTime" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="MenuComment">
+          <Key>
+            <PropertyRef Name="SM_Id" />
+          </Key>
+          <Property Name="SM_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SM_Pid" Type="int" />
+          <Property Name="SM_Menu" Type="int" Nullable="false" />
+          <Property Name="SM_From_User" Type="int" Nullable="false" />
+          <Property Name="SM_Content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SM_To_User" Type="int" Nullable="false" />
+          <Property Name="SM_UpTime" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Singer">
+          <Key>
+            <PropertyRef Name="S_Id" />
+          </Key>
+          <Property Name="S_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="S_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="S_Img" Type="nvarchar(max)" />
+          <Property Name="S_Info" Type="nvarchar(max)" />
+          <Property Name="S_Audit_State" Type="int" />
+          <Property Name="IsDelete" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SongComment">
+          <Key>
+            <PropertyRef Name="SC_Id" />
+          </Key>
+          <Property Name="SC_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SC_Pid" Type="int" />
+          <Property Name="SC_Song" Type="int" Nullable="false" />
+          <Property Name="SC_From_User" Type="int" Nullable="false" />
+          <Property Name="SC_Content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SC_To_User" Type="int" Nullable="false" />
+          <Property Name="SC_UpTime" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="SongList">
+          <Key>
+            <PropertyRef Name="S_Id" />
+          </Key>
+          <Property Name="S_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WYID" Type="nvarchar" MaxLength="50" />
+          <Property Name="S_Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="S_Type" Type="int" Nullable="false" />
+          <Property Name="S_Singer" Type="int" Nullable="false" />
+          <Property Name="S_Url" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="S_Cover" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="S_PlayCount" Type="int" />
+          <Property Name="S_CollectCount" Type="int" />
+          <Property Name="S_UpTime" Type="smalldatetime" Nullable="false" />
+          <Property Name="S_Lyric" Type="nvarchar(max)" />
+          <Property Name="S_Album" Type="int" />
+          <Property Name="S_Audit_State" Type="int" />
+          <Property Name="IsDelete" Type="int" />
+        </EntityType>
+        <EntityType Name="SongMenu">
+          <Key>
+            <PropertyRef Name="M_Id" />
+          </Key>
+          <Property Name="M_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="M_UserId" Type="int" Nullable="false" />
+          <Property Name="M_Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="M_Info" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="M_SongId" Type="nvarchar(max)" />
+          <Property Name="M_CreatTime" Type="smalldatetime" Nullable="false" />
+          <Property Name="M_Img" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="M_Type" Type="int" Nullable="false" />
+          <Property Name="M_PlayCount" Type="int" />
+          <Property Name="M_CollectCount" Type="int" />
+          <Property Name="IsDelete" Type="int" />
+        </EntityType>
+        <EntityType Name="Type">
+          <Key>
+            <PropertyRef Name="T_Id" />
+          </Key>
+          <Property Name="T_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="T_Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="U_Id" />
+          </Key>
+          <Property Name="U_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="U_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="U_Pwd" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="U_Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="U_Info" Type="nvarchar(max)" />
+          <Property Name="U_Tell" Type="nvarchar" MaxLength="11" />
+          <Property Name="U_Img" Type="nvarchar" MaxLength="100" />
+          <Property Name="U_Hobby" Type="nvarchar(max)" />
+          <Property Name="U_Fans" Type="nvarchar(max)" />
+          <Property Name="U_Follow" Type="nvarchar(max)" />
+          <Property Name="U_CollectSongMenu" Type="nvarchar(max)" />
+          <Property Name="U_CreatSongMenu" Type="nvarchar(max)" />
+          <Property Name="U_Like" Type="nvarchar(max)" />
+          <Property Name="U_Gender" Type="nvarchar" MaxLength="2" />
+          <Property Name="U_Birthday" Type="smalldatetime" />
+          <Property Name="U_RegistrationTime" Type="smalldatetime" />
+          <Property Name="IsAdmin" Type="int" Nullable="false" />
+          <Property Name="IsDelete" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Album__A_SingerI__31EC6D26">
+          <End Role="Singer" Type="Self.Singer" Multiplicity="1" />
+          <End Role="Album" Type="Self.Album" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Singer">
+              <PropertyRef Name="S_Id" />
+            </Principal>
+            <Dependent Role="Album">
+              <PropertyRef Name="A_SingerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Dynamic__D_UserI__32E0915F">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+          <End Role="Dynamic" Type="Self.Dynamic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="U_Id" />
+            </Principal>
+            <Dependent Role="Dynamic">
+              <PropertyRef Name="D_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DynamicCo__DC_Dy__33D4B598">
+          <End Role="Dynamic" Type="Self.Dynamic" Multiplicity="1" />
+          <End Role="DynamicComment" Type="Self.DynamicComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dynamic">
+              <PropertyRef Name="D_Id" />
+            </Principal>
+            <Dependent Role="DynamicComment">
+              <PropertyRef Name="DC_Dynamic" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DynamicCo__DC_Fr__34C8D9D1">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+          <End Role="DynamicComment" Type="Self.DynamicComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="U_Id" />
+            </Principal>
+            <Dependent Role="DynamicComment">
+              <PropertyRef Name="DC_From_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DynamicCo__DC_To__35BCFE0A">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+          <End Role="DynamicComment" Type="Self.DynamicComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="U_Id" />
+            </Principal>
+            <Dependent Role="DynamicComment">
+              <PropertyRef Name="DC_To_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MenuComme__SM_Fr__36B12243">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+          <End Role="MenuComment" Type="Self.MenuComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="U_Id" />
+            </Principal>
+            <Dependent Role="MenuComment">
+              <PropertyRef Name="SM_From_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MenuComme__SM_Me__37A5467C">
+          <End Role="SongMenu" Type="Self.SongMenu" Multiplicity="1" />
+          <End Role="MenuComment" Type="Self.MenuComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SongMenu">
+              <PropertyRef Name="M_Id" />
+            </Principal>
+            <Dependent Role="MenuComment">
+              <PropertyRef Name="SM_Menu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MenuComme__SM_To__38996AB5">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+          <End Role="MenuComment" Type="Self.MenuComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="U_Id" />
+            </Principal>
+            <Dependent Role="MenuComment">
+              <PropertyRef Name="SM_To_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SongComme__SC_Fr__398D8EEE">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+          <End Role="SongComment" Type="Self.SongComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="U_Id" />
+            </Principal>
+            <Dependent Role="SongComment">
+              <PropertyRef Name="SC_From_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SongComme__SC_So__31EC6D26">
+          <End Role="SongList" Type="Self.SongList" Multiplicity="1" />
+          <End Role="SongComment" Type="Self.SongComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SongList">
+              <PropertyRef Name="S_Id" />
+            </Principal>
+            <Dependent Role="SongComment">
+              <PropertyRef Name="SC_Song" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SongComme__SC_To__3B75D760">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+          <End Role="SongComment" Type="Self.SongComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="U_Id" />
+            </Principal>
+            <Dependent Role="SongComment">
+              <PropertyRef Name="SC_To_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SongList__S_Albu__2D27B809">
+          <End Role="Album" Type="Self.Album" Multiplicity="0..1" />
+          <End Role="SongList" Type="Self.SongList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="A_Id" />
+            </Principal>
+            <Dependent Role="SongList">
+              <PropertyRef Name="S_Album" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SongList__S_Sing__2B3F6F97">
+          <End Role="Singer" Type="Self.Singer" Multiplicity="1" />
+          <End Role="SongList" Type="Self.SongList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Singer">
+              <PropertyRef Name="S_Id" />
+            </Principal>
+            <Dependent Role="SongList">
+              <PropertyRef Name="S_Singer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SongList__S_Type__2A4B4B5E">
+          <End Role="Type" Type="Self.Type" Multiplicity="1" />
+          <End Role="SongList" Type="Self.SongList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type">
+              <PropertyRef Name="T_Id" />
+            </Principal>
+            <Dependent Role="SongList">
+              <PropertyRef Name="S_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SongMenu__M_Type__3F466844">
+          <End Role="Type" Type="Self.Type" Multiplicity="1" />
+          <End Role="SongMenu" Type="Self.SongMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type">
+              <PropertyRef Name="T_Id" />
+            </Principal>
+            <Dependent Role="SongMenu">
+              <PropertyRef Name="M_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SongMenu__M_User__403A8C7D">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+          <End Role="SongMenu" Type="Self.SongMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="U_Id" />
+            </Principal>
+            <Dependent Role="SongMenu">
+              <PropertyRef Name="M_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="YoungMusicModelStoreContainer">
+          <EntitySet Name="Album" EntityType="Self.Album" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dynamic" EntityType="Self.Dynamic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DynamicComment" EntityType="Self.DynamicComment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MenuComment" EntityType="Self.MenuComment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Singer" EntityType="Self.Singer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SongComment" EntityType="Self.SongComment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SongList" EntityType="Self.SongList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SongMenu" EntityType="Self.SongMenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Album__A_SingerI__31EC6D26" Association="Self.FK__Album__A_SingerI__31EC6D26">
+            <End Role="Singer" EntitySet="Singer" />
+            <End Role="Album" EntitySet="Album" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Dynamic__D_UserI__32E0915F" Association="Self.FK__Dynamic__D_UserI__32E0915F">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="Dynamic" EntitySet="Dynamic" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DynamicCo__DC_Dy__33D4B598" Association="Self.FK__DynamicCo__DC_Dy__33D4B598">
+            <End Role="Dynamic" EntitySet="Dynamic" />
+            <End Role="DynamicComment" EntitySet="DynamicComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DynamicCo__DC_Fr__34C8D9D1" Association="Self.FK__DynamicCo__DC_Fr__34C8D9D1">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="DynamicComment" EntitySet="DynamicComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DynamicCo__DC_To__35BCFE0A" Association="Self.FK__DynamicCo__DC_To__35BCFE0A">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="DynamicComment" EntitySet="DynamicComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MenuComme__SM_Fr__36B12243" Association="Self.FK__MenuComme__SM_Fr__36B12243">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="MenuComment" EntitySet="MenuComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MenuComme__SM_Me__37A5467C" Association="Self.FK__MenuComme__SM_Me__37A5467C">
+            <End Role="SongMenu" EntitySet="SongMenu" />
+            <End Role="MenuComment" EntitySet="MenuComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MenuComme__SM_To__38996AB5" Association="Self.FK__MenuComme__SM_To__38996AB5">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="MenuComment" EntitySet="MenuComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SongComme__SC_Fr__398D8EEE" Association="Self.FK__SongComme__SC_Fr__398D8EEE">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="SongComment" EntitySet="SongComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SongComme__SC_So__31EC6D26" Association="Self.FK__SongComme__SC_So__31EC6D26">
+            <End Role="SongList" EntitySet="SongList" />
+            <End Role="SongComment" EntitySet="SongComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SongComme__SC_To__3B75D760" Association="Self.FK__SongComme__SC_To__3B75D760">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="SongComment" EntitySet="SongComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SongList__S_Albu__2D27B809" Association="Self.FK__SongList__S_Albu__2D27B809">
+            <End Role="Album" EntitySet="Album" />
+            <End Role="SongList" EntitySet="SongList" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SongList__S_Sing__2B3F6F97" Association="Self.FK__SongList__S_Sing__2B3F6F97">
+            <End Role="Singer" EntitySet="Singer" />
+            <End Role="SongList" EntitySet="SongList" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SongList__S_Type__2A4B4B5E" Association="Self.FK__SongList__S_Type__2A4B4B5E">
+            <End Role="Type" EntitySet="Type" />
+            <End Role="SongList" EntitySet="SongList" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SongMenu__M_Type__3F466844" Association="Self.FK__SongMenu__M_Type__3F466844">
+            <End Role="Type" EntitySet="Type" />
+            <End Role="SongMenu" EntitySet="SongMenu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SongMenu__M_User__403A8C7D" Association="Self.FK__SongMenu__M_User__403A8C7D">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="SongMenu" EntitySet="SongMenu" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="YoungMusicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Album">
+          <Key>
+            <PropertyRef Name="A_Id" />
+          </Key>
+          <Property Name="A_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="A_SingerId" Type="Int32" Nullable="false" />
+          <Property Name="A_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="A_Info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="A_Song" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="A_Time" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="A_Img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="A_PlayCount" Type="Int32" />
+          <Property Name="IsDelete" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Singer" Relationship="Self.FK__Album__A_SingerI__25869641" FromRole="Album" ToRole="Singer" />
+          <NavigationProperty Name="SongList" Relationship="Self.FK__SongList__S_Albu__2D27B809" FromRole="Album" ToRole="SongList" />
+        </EntityType>
+        <EntityType Name="Dynamic">
+          <Key>
+            <PropertyRef Name="D_Id" />
+          </Key>
+          <Property Name="D_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="D_UserId" Type="Int32" Nullable="false" />
+          <Property Name="D_Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="D_UpTime" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="D_Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="D_GoodCount" Type="Int32" />
+          <NavigationProperty Name="UserInfo" Relationship="Self.FK__Dynamic__D_UserI__412EB0B6" FromRole="Dynamic" ToRole="UserInfo" />
+          <NavigationProperty Name="DynamicComment" Relationship="Self.FK__DynamicCo__DC_Dy__44FF419A" FromRole="Dynamic" ToRole="DynamicComment" />
+          <Property Name="D_SongID" Type="Int32" />
+          <Property Name="D_imgs" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DynamicComment">
+          <Key>
+            <PropertyRef Name="DC_Id" />
+          </Key>
+          <Property Name="DC_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DC_Pid" Type="Int32" />
+          <Property Name="DC_Dynamic" Type="Int32" Nullable="false" />
+          <Property Name="DC_From_User" Type="Int32" Nullable="false" />
+          <Property Name="DC_Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DC_To_User" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Dynamic" Relationship="Self.FK__DynamicCo__DC_Dy__44FF419A" FromRole="DynamicComment" ToRole="Dynamic" />
+          <NavigationProperty Name="UserInfo" Relationship="Self.FK__DynamicCo__DC_Fr__45F365D3" FromRole="DynamicComment" ToRole="UserInfo" />
+          <NavigationProperty Name="UserInfo1" Relationship="Self.FK__DynamicCo__DC_To__46E78A0C" FromRole="DynamicComment" ToRole="UserInfo" />
+          <Property Name="DC_UpTime" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="MenuComment">
+          <Key>
+            <PropertyRef Name="SM_Id" />
+          </Key>
+          <Property Name="SM_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SM_Pid" Type="Int32" />
+          <Property Name="SM_Menu" Type="Int32" Nullable="false" />
+          <Property Name="SM_From_User" Type="Int32" Nullable="false" />
+          <Property Name="SM_Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SM_To_User" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserInfo" Relationship="Self.FK__MenuComme__SM_Fr__3D5E1FD2" FromRole="MenuComment" ToRole="UserInfo" />
+          <NavigationProperty Name="SongMenu" Relationship="Self.FK__MenuComme__SM_Me__3C69FB99" FromRole="MenuComment" ToRole="SongMenu" />
+          <NavigationProperty Name="UserInfo1" Relationship="Self.FK__MenuComme__SM_To__3E52440B" FromRole="MenuComment" ToRole="UserInfo" />
+          <Property Name="SM_UpTime" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Singer">
+          <Key>
+            <PropertyRef Name="S_Id" />
+          </Key>
+          <Property Name="S_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="S_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="S_Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="S_Info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="S_Audit_State" Type="Int32" />
+          <Property Name="IsDelete" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Album" Relationship="Self.FK__Album__A_SingerI__25869641" FromRole="Singer" ToRole="Album" />
+          <NavigationProperty Name="SongList" Relationship="Self.FK__SongList__S_Sing__2B3F6F97" FromRole="Singer" ToRole="SongList" />
+        </EntityType>
+        <EntityType Name="SongComment">
+          <Key>
+            <PropertyRef Name="SC_Id" />
+          </Key>
+          <Property Name="SC_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SC_Pid" Type="Int32" />
+          <Property Name="SC_Song" Type="Int32" Nullable="false" />
+          <Property Name="SC_From_User" Type="Int32" Nullable="false" />
+          <Property Name="SC_Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SC_To_User" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserInfo" Relationship="Self.FK__SongComme__SC_Fr__32E0915F" FromRole="SongComment" ToRole="UserInfo" />
+          <NavigationProperty Name="SongList" Relationship="Self.FK__SongComme__SC_So__31EC6D26" FromRole="SongComment" ToRole="SongList" />
+          <NavigationProperty Name="UserInfo1" Relationship="Self.FK__SongComme__SC_To__33D4B598" FromRole="SongComment" ToRole="UserInfo" />
+          <Property Name="SC_UpTime" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="SongList">
+          <Key>
+            <PropertyRef Name="S_Id" />
+          </Key>
+          <Property Name="S_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="S_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="S_Type" Type="Int32" Nullable="false" />
+          <Property Name="S_Singer" Type="Int32" Nullable="false" />
+          <Property Name="S_Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="S_Cover" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="S_PlayCount" Type="Int32" />
+          <Property Name="S_CollectCount" Type="Int32" />
+          <Property Name="S_UpTime" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="S_Lyric" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="S_Album" Type="Int32" />
+          <Property Name="S_Audit_State" Type="Int32" />
+          <Property Name="IsDelete" Type="Int32" />
+          <NavigationProperty Name="Album" Relationship="Self.FK__SongList__S_Albu__2D27B809" FromRole="SongList" ToRole="Album" />
+          <NavigationProperty Name="Singer" Relationship="Self.FK__SongList__S_Sing__2B3F6F97" FromRole="SongList" ToRole="Singer" />
+          <NavigationProperty Name="SongComment" Relationship="Self.FK__SongComme__SC_So__31EC6D26" FromRole="SongList" ToRole="SongComment" />
+          <NavigationProperty Name="Type" Relationship="Self.FK__SongList__S_Type__2A4B4B5E" FromRole="SongList" ToRole="Type" />
+          <Property Name="WYID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SongMenu">
+          <Key>
+            <PropertyRef Name="M_Id" />
+          </Key>
+          <Property Name="M_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="M_UserId" Type="Int32" Nullable="false" />
+          <Property Name="M_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="M_Info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="M_SongId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="M_CreatTime" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="M_Img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="M_Type" Type="Int32" Nullable="false" />
+          <Property Name="M_PlayCount" Type="Int32" />
+          <Property Name="M_CollectCount" Type="Int32" />
+          <Property Name="IsDelete" Type="Int32" />
+          <NavigationProperty Name="MenuComment" Relationship="Self.FK__MenuComme__SM_Me__3C69FB99" FromRole="SongMenu" ToRole="MenuComment" />
+          <NavigationProperty Name="Type" Relationship="Self.FK__SongMenu__M_Type__38996AB5" FromRole="SongMenu" ToRole="Type" />
+          <NavigationProperty Name="UserInfo" Relationship="Self.FK__SongMenu__M_User__36B12243" FromRole="SongMenu" ToRole="UserInfo" />
+        </EntityType>
+        <EntityType Name="Type">
+          <Key>
+            <PropertyRef Name="T_Id" />
+          </Key>
+          <Property Name="T_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="T_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="SongList" Relationship="Self.FK__SongList__S_Type__2A4B4B5E" FromRole="Type" ToRole="SongList" />
+          <NavigationProperty Name="SongMenu" Relationship="Self.FK__SongMenu__M_Type__38996AB5" FromRole="Type" ToRole="SongMenu" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="U_Id" />
+          </Key>
+          <Property Name="U_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="U_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="U_Pwd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="U_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="U_Info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="U_Tell" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="U_Img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="U_Hobby" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="U_Fans" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="U_Follow" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="U_CollectSongMenu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="U_CreatSongMenu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="U_Like" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="U_Gender" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="U_Birthday" Type="DateTime" Precision="0" />
+          <Property Name="U_RegistrationTime" Type="DateTime" Precision="0" />
+          <Property Name="IsAdmin" Type="Int32" Nullable="false" />
+          <Property Name="IsDelete" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Dynamic" Relationship="Self.FK__Dynamic__D_UserI__412EB0B6" FromRole="UserInfo" ToRole="Dynamic" />
+          <NavigationProperty Name="DynamicComment" Relationship="Self.FK__DynamicCo__DC_Fr__45F365D3" FromRole="UserInfo" ToRole="DynamicComment" />
+          <NavigationProperty Name="DynamicComment1" Relationship="Self.FK__DynamicCo__DC_To__46E78A0C" FromRole="UserInfo" ToRole="DynamicComment" />
+          <NavigationProperty Name="MenuComment" Relationship="Self.FK__MenuComme__SM_Fr__3D5E1FD2" FromRole="UserInfo" ToRole="MenuComment" />
+          <NavigationProperty Name="MenuComment1" Relationship="Self.FK__MenuComme__SM_To__3E52440B" FromRole="UserInfo" ToRole="MenuComment" />
+          <NavigationProperty Name="SongComment" Relationship="Self.FK__SongComme__SC_Fr__32E0915F" FromRole="UserInfo" ToRole="SongComment" />
+          <NavigationProperty Name="SongComment1" Relationship="Self.FK__SongComme__SC_To__33D4B598" FromRole="UserInfo" ToRole="SongComment" />
+          <NavigationProperty Name="SongMenu" Relationship="Self.FK__SongMenu__M_User__36B12243" FromRole="UserInfo" ToRole="SongMenu" />
+        </EntityType>
+        <Association Name="FK__Album__A_SingerI__25869641">
+          <End Role="Singer" Type="Self.Singer" Multiplicity="1" />
+          <End Role="Album" Type="Self.Album" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Singer">
+              <PropertyRef Name="S_Id" />
+            </Principal>
+            <Dependent Role="Album">
+              <PropertyRef Name="A_SingerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SongList__S_Albu__2D27B809">
+          <End Role="Album" Type="Self.Album" Multiplicity="0..1" />
+          <End Role="SongList" Type="Self.SongList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="A_Id" />
+            </Principal>
+            <Dependent Role="SongList">
+              <PropertyRef Name="S_Album" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Dynamic__D_UserI__412EB0B6">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+          <End Role="Dynamic" Type="Self.Dynamic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="U_Id" />
+            </Principal>
+            <Dependent Role="Dynamic">
+              <PropertyRef Name="D_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DynamicCo__DC_Dy__44FF419A">
+          <End Role="Dynamic" Type="Self.Dynamic" Multiplicity="1" />
+          <End Role="DynamicComment" Type="Self.DynamicComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dynamic">
+              <PropertyRef Name="D_Id" />
+            </Principal>
+            <Dependent Role="DynamicComment">
+              <PropertyRef Name="DC_Dynamic" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DynamicCo__DC_Fr__45F365D3">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+          <End Role="DynamicComment" Type="Self.DynamicComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="U_Id" />
+            </Principal>
+            <Dependent Role="DynamicComment">
+              <PropertyRef Name="DC_From_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DynamicCo__DC_To__46E78A0C">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+          <End Role="DynamicComment" Type="Self.DynamicComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="U_Id" />
+            </Principal>
+            <Dependent Role="DynamicComment">
+              <PropertyRef Name="DC_To_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MenuComme__SM_Fr__3D5E1FD2">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+          <End Role="MenuComment" Type="Self.MenuComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="U_Id" />
+            </Principal>
+            <Dependent Role="MenuComment">
+              <PropertyRef Name="SM_From_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MenuComme__SM_Me__3C69FB99">
+          <End Role="SongMenu" Type="Self.SongMenu" Multiplicity="1" />
+          <End Role="MenuComment" Type="Self.MenuComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SongMenu">
+              <PropertyRef Name="M_Id" />
+            </Principal>
+            <Dependent Role="MenuComment">
+              <PropertyRef Name="SM_Menu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MenuComme__SM_To__3E52440B">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+          <End Role="MenuComment" Type="Self.MenuComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="U_Id" />
+            </Principal>
+            <Dependent Role="MenuComment">
+              <PropertyRef Name="SM_To_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SongList__S_Sing__2B3F6F97">
+          <End Role="Singer" Type="Self.Singer" Multiplicity="1" />
+          <End Role="SongList" Type="Self.SongList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Singer">
+              <PropertyRef Name="S_Id" />
+            </Principal>
+            <Dependent Role="SongList">
+              <PropertyRef Name="S_Singer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SongComme__SC_Fr__32E0915F">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+          <End Role="SongComment" Type="Self.SongComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="U_Id" />
+            </Principal>
+            <Dependent Role="SongComment">
+              <PropertyRef Name="SC_From_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SongComme__SC_So__31EC6D26">
+          <End Role="SongList" Type="Self.SongList" Multiplicity="1" />
+          <End Role="SongComment" Type="Self.SongComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SongList">
+              <PropertyRef Name="S_Id" />
+            </Principal>
+            <Dependent Role="SongComment">
+              <PropertyRef Name="SC_Song" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SongComme__SC_To__33D4B598">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+          <End Role="SongComment" Type="Self.SongComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="U_Id" />
+            </Principal>
+            <Dependent Role="SongComment">
+              <PropertyRef Name="SC_To_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SongList__S_Type__2A4B4B5E">
+          <End Role="Type" Type="Self.Type" Multiplicity="1" />
+          <End Role="SongList" Type="Self.SongList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type">
+              <PropertyRef Name="T_Id" />
+            </Principal>
+            <Dependent Role="SongList">
+              <PropertyRef Name="S_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SongMenu__M_Type__38996AB5">
+          <End Role="Type" Type="Self.Type" Multiplicity="1" />
+          <End Role="SongMenu" Type="Self.SongMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type">
+              <PropertyRef Name="T_Id" />
+            </Principal>
+            <Dependent Role="SongMenu">
+              <PropertyRef Name="M_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SongMenu__M_User__36B12243">
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="1" />
+          <End Role="SongMenu" Type="Self.SongMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="U_Id" />
+            </Principal>
+            <Dependent Role="SongMenu">
+              <PropertyRef Name="M_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="YoungMusicEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Album" EntityType="Self.Album" />
+          <EntitySet Name="Dynamic" EntityType="Self.Dynamic" />
+          <EntitySet Name="DynamicComment" EntityType="Self.DynamicComment" />
+          <EntitySet Name="MenuComment" EntityType="Self.MenuComment" />
+          <EntitySet Name="Singer" EntityType="Self.Singer" />
+          <EntitySet Name="SongComment" EntityType="Self.SongComment" />
+          <EntitySet Name="SongList" EntityType="Self.SongList" />
+          <EntitySet Name="SongMenu" EntityType="Self.SongMenu" />
+          <EntitySet Name="Type" EntityType="Self.Type" />
+          <EntitySet Name="UserInfo" EntityType="Self.UserInfo" />
+          <AssociationSet Name="FK__Album__A_SingerI__25869641" Association="Self.FK__Album__A_SingerI__25869641">
+            <End Role="Singer" EntitySet="Singer" />
+            <End Role="Album" EntitySet="Album" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SongList__S_Albu__2D27B809" Association="Self.FK__SongList__S_Albu__2D27B809">
+            <End Role="Album" EntitySet="Album" />
+            <End Role="SongList" EntitySet="SongList" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Dynamic__D_UserI__412EB0B6" Association="Self.FK__Dynamic__D_UserI__412EB0B6">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="Dynamic" EntitySet="Dynamic" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DynamicCo__DC_Dy__44FF419A" Association="Self.FK__DynamicCo__DC_Dy__44FF419A">
+            <End Role="Dynamic" EntitySet="Dynamic" />
+            <End Role="DynamicComment" EntitySet="DynamicComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DynamicCo__DC_Fr__45F365D3" Association="Self.FK__DynamicCo__DC_Fr__45F365D3">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="DynamicComment" EntitySet="DynamicComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DynamicCo__DC_To__46E78A0C" Association="Self.FK__DynamicCo__DC_To__46E78A0C">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="DynamicComment" EntitySet="DynamicComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MenuComme__SM_Fr__3D5E1FD2" Association="Self.FK__MenuComme__SM_Fr__3D5E1FD2">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="MenuComment" EntitySet="MenuComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MenuComme__SM_Me__3C69FB99" Association="Self.FK__MenuComme__SM_Me__3C69FB99">
+            <End Role="SongMenu" EntitySet="SongMenu" />
+            <End Role="MenuComment" EntitySet="MenuComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MenuComme__SM_To__3E52440B" Association="Self.FK__MenuComme__SM_To__3E52440B">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="MenuComment" EntitySet="MenuComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SongList__S_Sing__2B3F6F97" Association="Self.FK__SongList__S_Sing__2B3F6F97">
+            <End Role="Singer" EntitySet="Singer" />
+            <End Role="SongList" EntitySet="SongList" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SongComme__SC_Fr__32E0915F" Association="Self.FK__SongComme__SC_Fr__32E0915F">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="SongComment" EntitySet="SongComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SongComme__SC_So__31EC6D26" Association="Self.FK__SongComme__SC_So__31EC6D26">
+            <End Role="SongList" EntitySet="SongList" />
+            <End Role="SongComment" EntitySet="SongComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SongComme__SC_To__33D4B598" Association="Self.FK__SongComme__SC_To__33D4B598">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="SongComment" EntitySet="SongComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SongList__S_Type__2A4B4B5E" Association="Self.FK__SongList__S_Type__2A4B4B5E">
+            <End Role="Type" EntitySet="Type" />
+            <End Role="SongList" EntitySet="SongList" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SongMenu__M_Type__38996AB5" Association="Self.FK__SongMenu__M_Type__38996AB5">
+            <End Role="Type" EntitySet="Type" />
+            <End Role="SongMenu" EntitySet="SongMenu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SongMenu__M_User__36B12243" Association="Self.FK__SongMenu__M_User__36B12243">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="SongMenu" EntitySet="SongMenu" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="YoungMusicModelStoreContainer" CdmEntityContainer="YoungMusicEntities">
+          <EntitySetMapping Name="Album">
+            <EntityTypeMapping TypeName="YoungMusicModel.Album">
+              <MappingFragment StoreEntitySet="Album">
+                <ScalarProperty Name="A_Id" ColumnName="A_Id" />
+                <ScalarProperty Name="A_SingerId" ColumnName="A_SingerId" />
+                <ScalarProperty Name="A_Name" ColumnName="A_Name" />
+                <ScalarProperty Name="A_Info" ColumnName="A_Info" />
+                <ScalarProperty Name="A_Song" ColumnName="A_Song" />
+                <ScalarProperty Name="A_Time" ColumnName="A_Time" />
+                <ScalarProperty Name="A_Img" ColumnName="A_Img" />
+                <ScalarProperty Name="A_PlayCount" ColumnName="A_PlayCount" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dynamic">
+            <EntityTypeMapping TypeName="YoungMusicModel.Dynamic">
+              <MappingFragment StoreEntitySet="Dynamic">
+                <ScalarProperty Name="D_imgs" ColumnName="D_imgs" />
+                <ScalarProperty Name="D_SongID" ColumnName="D_SongID" />
+                <ScalarProperty Name="D_Id" ColumnName="D_Id" />
+                <ScalarProperty Name="D_UserId" ColumnName="D_UserId" />
+                <ScalarProperty Name="D_Title" ColumnName="D_Title" />
+                <ScalarProperty Name="D_UpTime" ColumnName="D_UpTime" />
+                <ScalarProperty Name="D_Content" ColumnName="D_Content" />
+                <ScalarProperty Name="D_GoodCount" ColumnName="D_GoodCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DynamicComment">
+            <EntityTypeMapping TypeName="YoungMusicModel.DynamicComment">
+              <MappingFragment StoreEntitySet="DynamicComment">
+                <ScalarProperty Name="DC_UpTime" ColumnName="DC_UpTime" />
+                <ScalarProperty Name="DC_Id" ColumnName="DC_Id" />
+                <ScalarProperty Name="DC_Pid" ColumnName="DC_Pid" />
+                <ScalarProperty Name="DC_Dynamic" ColumnName="DC_Dynamic" />
+                <ScalarProperty Name="DC_From_User" ColumnName="DC_From_User" />
+                <ScalarProperty Name="DC_Content" ColumnName="DC_Content" />
+                <ScalarProperty Name="DC_To_User" ColumnName="DC_To_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuComment">
+            <EntityTypeMapping TypeName="YoungMusicModel.MenuComment">
+              <MappingFragment StoreEntitySet="MenuComment">
+                <ScalarProperty Name="SM_UpTime" ColumnName="SM_UpTime" />
+                <ScalarProperty Name="SM_Id" ColumnName="SM_Id" />
+                <ScalarProperty Name="SM_Pid" ColumnName="SM_Pid" />
+                <ScalarProperty Name="SM_Menu" ColumnName="SM_Menu" />
+                <ScalarProperty Name="SM_From_User" ColumnName="SM_From_User" />
+                <ScalarProperty Name="SM_Content" ColumnName="SM_Content" />
+                <ScalarProperty Name="SM_To_User" ColumnName="SM_To_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Singer">
+            <EntityTypeMapping TypeName="YoungMusicModel.Singer">
+              <MappingFragment StoreEntitySet="Singer">
+                <ScalarProperty Name="S_Id" ColumnName="S_Id" />
+                <ScalarProperty Name="S_Name" ColumnName="S_Name" />
+                <ScalarProperty Name="S_Img" ColumnName="S_Img" />
+                <ScalarProperty Name="S_Info" ColumnName="S_Info" />
+                <ScalarProperty Name="S_Audit_State" ColumnName="S_Audit_State" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SongComment">
+            <EntityTypeMapping TypeName="YoungMusicModel.SongComment">
+              <MappingFragment StoreEntitySet="SongComment">
+                <ScalarProperty Name="SC_UpTime" ColumnName="SC_UpTime" />
+                <ScalarProperty Name="SC_Id" ColumnName="SC_Id" />
+                <ScalarProperty Name="SC_Pid" ColumnName="SC_Pid" />
+                <ScalarProperty Name="SC_Song" ColumnName="SC_Song" />
+                <ScalarProperty Name="SC_From_User" ColumnName="SC_From_User" />
+                <ScalarProperty Name="SC_Content" ColumnName="SC_Content" />
+                <ScalarProperty Name="SC_To_User" ColumnName="SC_To_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SongList">
+            <EntityTypeMapping TypeName="YoungMusicModel.SongList">
+              <MappingFragment StoreEntitySet="SongList">
+                <ScalarProperty Name="WYID" ColumnName="WYID" />
+                <ScalarProperty Name="S_Id" ColumnName="S_Id" />
+                <ScalarProperty Name="S_Name" ColumnName="S_Name" />
+                <ScalarProperty Name="S_Type" ColumnName="S_Type" />
+                <ScalarProperty Name="S_Singer" ColumnName="S_Singer" />
+                <ScalarProperty Name="S_Url" ColumnName="S_Url" />
+                <ScalarProperty Name="S_Cover" ColumnName="S_Cover" />
+                <ScalarProperty Name="S_PlayCount" ColumnName="S_PlayCount" />
+                <ScalarProperty Name="S_CollectCount" ColumnName="S_CollectCount" />
+                <ScalarProperty Name="S_UpTime" ColumnName="S_UpTime" />
+                <ScalarProperty Name="S_Lyric" ColumnName="S_Lyric" />
+                <ScalarProperty Name="S_Album" ColumnName="S_Album" />
+                <ScalarProperty Name="S_Audit_State" ColumnName="S_Audit_State" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SongMenu">
+            <EntityTypeMapping TypeName="YoungMusicModel.SongMenu">
+              <MappingFragment StoreEntitySet="SongMenu">
+                <ScalarProperty Name="M_Id" ColumnName="M_Id" />
+                <ScalarProperty Name="M_UserId" ColumnName="M_UserId" />
+                <ScalarProperty Name="M_Name" ColumnName="M_Name" />
+                <ScalarProperty Name="M_Info" ColumnName="M_Info" />
+                <ScalarProperty Name="M_SongId" ColumnName="M_SongId" />
+                <ScalarProperty Name="M_CreatTime" ColumnName="M_CreatTime" />
+                <ScalarProperty Name="M_Img" ColumnName="M_Img" />
+                <ScalarProperty Name="M_Type" ColumnName="M_Type" />
+                <ScalarProperty Name="M_PlayCount" ColumnName="M_PlayCount" />
+                <ScalarProperty Name="M_CollectCount" ColumnName="M_CollectCount" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Type">
+            <EntityTypeMapping TypeName="YoungMusicModel.Type">
+              <MappingFragment StoreEntitySet="Type">
+                <ScalarProperty Name="T_Id" ColumnName="T_Id" />
+                <ScalarProperty Name="T_Name" ColumnName="T_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInfo">
+            <EntityTypeMapping TypeName="YoungMusicModel.UserInfo">
+              <MappingFragment StoreEntitySet="UserInfo">
+                <ScalarProperty Name="U_Id" ColumnName="U_Id" />
+                <ScalarProperty Name="U_Name" ColumnName="U_Name" />
+                <ScalarProperty Name="U_Pwd" ColumnName="U_Pwd" />
+                <ScalarProperty Name="U_Email" ColumnName="U_Email" />
+                <ScalarProperty Name="U_Info" ColumnName="U_Info" />
+                <ScalarProperty Name="U_Tell" ColumnName="U_Tell" />
+                <ScalarProperty Name="U_Img" ColumnName="U_Img" />
+                <ScalarProperty Name="U_Hobby" ColumnName="U_Hobby" />
+                <ScalarProperty Name="U_Fans" ColumnName="U_Fans" />
+                <ScalarProperty Name="U_Follow" ColumnName="U_Follow" />
+                <ScalarProperty Name="U_CollectSongMenu" ColumnName="U_CollectSongMenu" />
+                <ScalarProperty Name="U_CreatSongMenu" ColumnName="U_CreatSongMenu" />
+                <ScalarProperty Name="U_Like" ColumnName="U_Like" />
+                <ScalarProperty Name="U_Gender" ColumnName="U_Gender" />
+                <ScalarProperty Name="U_Birthday" ColumnName="U_Birthday" />
+                <ScalarProperty Name="U_RegistrationTime" ColumnName="U_RegistrationTime" />
+                <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

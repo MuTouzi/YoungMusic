@@ -1,0 +1,517 @@
+/* <!-- 公共css --> */
+::selection {
+	color: #fff;
+	background: #9B0909;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+hr {
+	height: 1.1px;
+}
+
+/* 隐藏 */
+.notShow {
+	display: none;
+}
+
+/* 头部一级菜单被选中 */
+.topCheck {
+	background: #000;
+}
+
+
+/* 头部二级菜单被选中 */
+.topItemCheck {
+	background: #9B0909;
+	/* border: 6px solid transparent; */
+}
+
+/* 头部css */
+#top {
+	margin: 0 auto;
+	width: 100%;
+	height: 70px;
+	background: #242424;
+	margin-bottom: 35px;
+}
+
+/* 登录 */
+.m_login {
+	right: 190px;
+}
+
+.m_login:hover {
+	color: #fff;
+}
+
+/* 登录之后的图片 */
+.m_img {
+	right: 60px;
+}
+
+.user {
+	width: 40px;
+	height: 40px;
+	margin: auto;
+	margin-left: -10px;
+	border-radius: 40px;
+	/* 设置图片平铺 */
+	object-fit: initial;
+}
+
+/* logo */
+.logo {
+	margin-left: 12%;
+	margin-right: 6%;
+	line-height: 70px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 25pt;
+	color: rgb(255, 255, 255);
+	text-shadow: rgb(255, 255, 255) 0px 0px 10px, rgb(255, 255, 255) 0px 0px 50px, rgb(194, 12, 12) 0px 0px 10px, rgb(194, 12, 12) 0px 0px 20px, rgb(194, 12, 12) 0px 0px 30px, rgb(194, 12, 12) 0px 0px 30px, rgb(194, 12, 12) 0px 0px 50px;
+	/* transition:all 0.8s;
+	*/
+	cursor: pointer;
+}
+
+/* 一级菜单 */
+.m_top {
+	display: flex;
+	line-height: 70px;
+	position: relative;
+}
+
+.m_top>a {
+	position: absolute;
+	color: #ccc;
+	font-size: 0.9em;
+}
+
+/* 创作者中心 */
+.m_content {
+	right: 280px;
+}
+
+.m_content:hover {
+	color: #FFFFFF;
+}
+
+/* 输入框背景 */
+.m_input {
+	width: 210px;
+	height: 33px;
+	background: #FFFFFF;
+	margin: auto;
+	position: absolute;;
+	right: 400px;
+	top: 20px;
+	line-height: 30px;
+	border-radius: 30px;
+	/* display: none; */
+}
+
+/* 搜索图片 */
+.m_input img {
+	width: 18px;
+	position: absolute;
+	margin-top: 8px;
+	margin-left: 10px;
+}
+
+/* 输入框 */
+.m_input input {
+	position: absolute;
+	margin-top: 4px;
+	margin-left: 33px;
+	border: 0;
+	outline: none;
+	width: 150px;
+	height: 25px;
+}
+
+.userPhoto{
+	position: absolute;
+	right: 100px;
+}
+
+
+/* 第一个ul菜单 */
+.menu1 {
+	height: 70px;
+	width: 25%;
+	text-align: center;
+}
+
+.menu1>li {
+	float: left;
+	transition: all 0.5s;
+	width: 33%;
+	flex-grow:1;
+}
+
+.menu1 a {
+	color: #ccc;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	transition: all 0.5s;
+	
+}
+
+/* 鼠标移入事件 menu菜单li */
+.menu1>li:hover {
+	background: #000000;
+	transition: all 0.5s;
+}
+
+.menu1>li:hover a {
+	color: #fff;
+	transition: all 0.5s;
+}
+
+/* 头部红色横条 */
+.m_back {
+	width: 100%;
+	height: 5px;
+	background: #C20C0C;
+}
+
+/* 发现音乐的二级菜单 首页被显示 其他页面被隐藏 */
+.menu2 {
+	display: flex;
+	height: 30px;
+	background: #C20C0C;
+	margin-bottom: 30px;
+	padding-left: 30%;
+	line-height: 23px;
+	position: relative;
+	width: 70%;
+	z-index: 1;
+}
+
+.menu2 li {
+	padding: 0 30px;
+}
+
+.menu2 li>a {
+	padding: 3px 15px;
+	border-radius: 10px;
+	font-size: 0.85em;
+	color: #FFFFFF;	
+	transition: all 0.5s;
+}
+
+.menu2 li>a:hover {
+	background: #9B0909;
+	transition: all 0.2s;
+}
+
+/* <!-- 底部版权 --> */
+#bottom {
+	font-size: 0.9em;
+	position: relative;
+	bottom: 0;
+	height: 200px;
+	margin-top: 50px;
+	color: #fff;
+	background-color: #393D49;
+}
+
+#bottom .fl {
+	float: left;
+	margin: 60px 0 0 20%;
+}
+
+#bottom .fl p {
+	line-height: 30px;
+}
+
+#bottom .fl p .comm {
+	margin-left: 20px;
+}
+
+#bottom .fl a {
+	color: #ddd;
+}
+
+#bottom .fl a:hover {
+	color: #fff;
+	text-decoration: underline #fff;
+}
+
+#bottom .fr {
+	float: right;
+	margin: 30px 22% 0 0;
+}
+
+#bottom .fr ul li {
+	line-height: 30px;
+	color: #ddd;
+}
+
+#bottom .fr ul li:hover {
+	cursor: pointer;
+	color: #fff;
+	text-decoration: underline #fff;
+}
+
+/* 底部播放区 重点！！！！！ */
+#head {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	text-align: right;
+	/* background:aqua;
+	*/
+}
+
+#head>img {
+	height: 20px;
+	margin-right: 50px;
+}
+
+/* 播放区域 */
+#wrap {
+	/* opacity:0.9; */
+	position: fixed;
+	bottom: -55px;
+	/* bottom:55px;*/
+	height: 55px;
+	width: 100%;
+	background: rgb(36, 36, 36, 0.9);
+	box-shadow: 0px -3px 5px rgb(36, 36, 36, 0.9);
+	/* 文字不被选中 */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* 按钮的样式 暂停 播放 进度条 头像 下一曲啥的 */
+/* 按钮的大致布局 */
+.play_left {
+	position: absolute;
+	left: 150px;
+}
+
+.play_left img {
+	opacity: 0.7;
+}
+
+.play_right {
+	position: absolute;
+	right: 150px;
+}
+
+.play_right img {
+	opacity: 0.7;
+}
+
+.t_10 {
+	position: relative;
+	top: 18px;
+	width: 20px;
+	margin: 0 10px;
+}
+
+.t_20 {
+	position: relative;
+	width: 35px;
+}
+
+.t_30 {
+	position: relative;
+	top: 2px;
+	width: 50px;
+}
+
+/* 进度条啥的 小细节 */
+#SongList {
+	height: 280px;
+	width: 350px;
+	background: #000;
+	z-index: 9;
+	position: fixed;
+	bottom: 55px;
+	right: 60px;
+	overflow-y: auto;
+	display: none;
+	text-align: left;
+	color: #C2C2C2;
+	font-size: 0.9em;
+}
+
+#SongList ul {
+	/* background:#9B0909;
+	*/
+	margin-left: 10px;
+}
+
+#SongList ul li {
+	margin: 2px;
+	cursor: pointer;
+}
+
+#SongList ul li:hover {
+	color: #fff;
+}
+
+#p2 {
+	display: none;
+}
+
+#p1,
+#p2 {
+	opacity: 1;
+}
+
+#wrap img:hover {
+	opacity: 1;
+}
+
+.SongInfo {
+	position: absolute;
+	left: 350px;
+}
+
+.SongInfo a {
+	color: #FFFFFF;
+	font-size: 0.8em;
+}
+
+.song {
+	position: relative;
+	/* top:-20px;
+	*/
+	margin-left: 20px;
+	/* left:20px;
+	*/
+}
+
+.singer {
+	position: relative;
+	/* top:-20px;
+	*/
+	margin-left: 20px;
+}
+
+.singer a {
+	color: #CCCCCC;
+}
+
+.jinDuTiao {
+	position: absolute;
+	top: 30px;
+	left: 60px;
+	width: 600px;
+	height: 20px;
+	/* background:#fff;
+	*/
+}
+
+.jinDuTiao .JinDu {
+	width: 100%;
+	height: 10px;
+	background: #000000;
+	border-radius: 55px;
+	box-shadow: inset 0px -1px 1px #717171;
+}
+
+.JinDu .progress {
+	width: 0%;
+	height: 100%;
+	border-radius: 5px;
+	background-color: #9B0909;
+	box-shadow: inset 0px -1px 1px #000;
+}
+
+.jinDuTiao .YuanDian {
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	border-radius: 15px;
+	background: #F5F5F5;
+	top: -2px;
+	background-image: radial-gradient(circle, #f00, #fff, #fff);
+}
+
+.songTime {
+	position: absolute;
+	left: 650px;
+	top: 25px;
+	color: #CCCCCC;
+	font-family: "bodoni mt";
+	width: 100px;
+}
+
+.songTime span:nth-of-type(2) {
+	color: #717171;
+}
+
+.songImg {
+	position: relative;
+	top: 6px;
+	border-radius: 5px;
+	/* border:1px solid #000000;
+	*/
+	box-shadow: 2px #000000;
+	border-radius: 5px;
+	width: 40px;
+	height: 40px;
+}
+
+/* 音量的位置 */
+#volume {
+	position: absolute;
+	bottom: 20px;
+	/* margin-left: 38px; */
+	display: none;
+	width: 20px;
+	background-color: rgb(46, 44, 46, 0.8);
+	padding: 10px;
+	padding-top: 15px;
+}
+
+.layui-slider-vertical {
+	margin: auto;
+}
+
+/* 滚动条样式 */
+#SongList::-webkit-scrollbar {
+	width: 5px;
+	/* height: 10px; */
+	border-radius: 10px;
+}
+#SongList::-webkit-scrollbar-button,
+#SongList::-webkit-scrollbar-button:vertical {
+	display: none;
+}
+#SongList::-webkit-scrollbar-track,
+#SongList::-webkit-scrollbar-track:vertical {
+	border-radius: 5px;
+}
+#SongList::-webkit-scrollbar-track-piece {
+	background-color: rgba(48, 48, 48, 0.9);
+	box-shadow: inset 0 0 2px #717171; 
+	border-radius: 5px;
+}
+#SongList::-webkit-scrollbar-thumb,
+#SongList::-webkit-scrollbar-thumb:vertical {
+	border-radius: 10px;
+	/* -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,1); */
+	box-shadow: inset 0 0 1px #717171;
+	background-color: #c20c0c;
+}
+#SongList::-webkit-scrollbar-thumb:hover,
+#SongList::-webkit-scrollbar-thumb:vertical:hover {
+	background: #c20c0ce5;
+}

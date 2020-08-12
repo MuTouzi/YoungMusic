@@ -1,0 +1,347 @@
+.layui-btn-primary:hover {
+		border: 1px solid #ccc;
+	}
+
+	body {
+		background-color: #F5F5F5;
+		font-size: 14px;
+	}
+
+	.hr-red {
+		background-color: #C20C0C;
+		height: 3px;
+	}
+
+	/* 最大的div */
+	#boxapp {
+		/* background-color: #F5F5F5; */
+		margin: 0px auto;
+		width: 70%;
+	}
+
+	/* 居中的div */
+	#box-cendiv {
+		background-color: #FFFFFF;
+		/* border: 1px solid #009F95; */
+		margin: 0px auto;
+		/* width: 80%; */
+		height: 100%;
+		height: 300px;
+		user-select: text;
+	}
+
+	/* 个人信息div */
+	.infodiv {
+		width: 100%;
+		margin: 0 auto;
+		display: flex;
+		position: relative;
+		/* margin-top: 50px; */
+		top: 50px;
+	}
+
+	.app-info {
+		margin-left: 8%;
+		width: 70%;
+	}
+
+	/* 头像div */
+	.imgdiv {
+		width: 200px;
+		height: 200px;
+		box-shadow: 0 0 3px 1px #ccc;		
+		cursor: pointer;
+	}
+
+	/* 头像 */
+	.imgdiv>img {
+		/* border: 1px solid #d5d5d5; */
+		/* border-radius: 2px; */
+		/* padding: 3px; */
+		background: #f0f0f0;
+		width: auto;
+		height: 100%;
+		display: block;
+		object-fit: initial;
+	}
+	/* 点击更换头像 */
+	.updimg{
+		width: 200px;
+		height: 20px;
+		position: absolute;
+		color: black;
+		bottom: 52px;
+		text-align: center;
+		margin:0px auto;
+		background-color: #1e9fff;
+		color: #fff;
+		font-size: 15px;
+		opacity: 0;
+		transition: all 0.5s;
+	}
+	
+	.imgdiv:hover .updimg{
+		transition: all 0.5s;
+		opacity: 0.9;
+	}
+	
+	/* 名字 */
+	.pname {
+		font-size: 30px;
+	}
+
+	/* 按钮 */
+	.btn {
+		float: right;
+		margin: 0 5px;
+	}
+
+	/* 动态/关注/粉丝 */
+	.span-bolck>a {
+		/* font-size: 20px;
+        border-bottom: 1px solid gray; */
+		color: #01AAED;
+		font-size: 1em;
+		margin-right: 10px;
+	}
+
+	.span-bolck>a>span {
+		color: #01AAED;
+		padding: 0 3px;
+	}
+
+	.span-bolck>a:hover {
+		text-decoration: underline #000;
+	}
+
+	/* 地区 */
+	.p-address {
+		margin-top: 10px;
+	}
+
+	/* 个性签名 */
+	.p-info {
+		margin-top: 10px;
+		height: 80px;
+		overflow: hidden;
+	}
+
+	/* 设置个人div */
+	.box-div {
+		width: 90%;
+		margin: auto;
+		position: relative;
+	}
+
+
+	/* 排行榜div */
+	#paihangdiv {
+		margin-top: 30px;
+		height: 100%;
+		/* background-color: #0000FF; */
+	}
+
+	/* 标题div */
+	.ph-div-h {
+		/* padding: 10px; */
+		padding-left: 10px;
+	}
+
+	/* 歌曲排行榜标题 */
+	.ph-p {
+		/* margin-left: 100px; */
+		margin-top: 30px;
+		font-size: 20px;
+		/* font-weight: bold; */
+		color: #000;
+	}
+
+	/* 副标题 */
+	.ph-span {
+		margin-left: 20px;
+		font-size: 12px;
+	}
+	
+	.ph-uldiv table i{
+		color: #C20C0C;
+	}
+
+	.ph-uldiv table a:hover{
+		text-decoration: underline;
+		color: #C20C0C;
+	}
+	
+	/* 查看更多 */
+	.more-span {
+		float: right;
+		margin-right: 10px;
+		font-size: 1em;
+		/* font-size: 15px; */
+		/* font-weight: bold; */
+	}
+
+	.more-span a:hover {
+		text-decoration: underline;
+		color: brown;
+	}
+
+	#menudiv {
+		/* margin-top: 30px; */
+		height: 100%;
+		width: 100%;
+		border: 1px;
+	}
+
+	/* 歌单的ul */
+	.menu-div-ul {
+		display: flex;
+		flex-wrap: wrap;
+		/* width: 80%; */
+		margin: 0 auto;
+		/* border: 1px solid lawngreen; */
+		margin-left: 1px;
+	}
+
+	/* 歌单的li */
+	.menu-div-ul>li {
+		/* margin-left: 40px; */
+		/* margin: 5px 14.5px; */
+		max-width: 150px;
+		min-width: 140px;
+		margin: 15px 12px;
+		text-align: center;
+	}
+
+	/* 歌单的li */
+	.menu-div-ul>li:hover a {
+		color: brown;
+		text-decoration: underline;
+	}
+
+	/* 歌单图片 */
+	.menu-div-ul img {
+		width: 150px;
+		height: 150px;
+	}
+
+
+
+	/* 编辑个人资料 */
+	/*
+	选择按钮的颜色
+	.layui-form-radio>i:hover,
+	.layui-form-radioed>i {
+	    color: rgb(255, 51, 0, 0.8) !important;
+	}
+	
+	.layui-form-checked[lay-skin=primary] i {
+	    border-color: rgb(194, 12, 12, 0.8) !important;
+	    background-color: rgb(255, 51, 0, 0.8) !important;
+	}
+	
+	.layui-form-checkbox[lay-skin=primary]:hover i {
+	    border-color: rgb(194, 12, 12, 0.8) !important;
+	}
+	
+	禁用按钮颜色
+	.layui-btn-danger {
+	    background-color: rgb(255, 51, 0);
+	}
+	
+	.layui-btn-primary:hover {
+	    border: 1px solid #ccc;
+	}
+	
+	.layui-laydate .layui-this {
+	    background-color: brown !important;
+	} */
+
+	#mc{
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: rgba(139, 139, 139, 0.4);
+		transition: all 1.5s;
+		z-index: 100;
+	}
+	#upd {
+		width: 750px;
+		height: auto;
+		background-color: white;
+		position: fixed;
+		z-index: 1;
+		top: 50%;
+		left: 50%;
+		border-radius: 5px;
+		transform: translate(-50%, -50%);
+		box-shadow:0 0 5px 2px rgba(139, 139, 139, 0.70);
+		padding-top: 10px;
+		padding-bottom: 8px;
+	}
+	.imgdivs {
+		position: absolute;
+		left: 550px;
+		text-align: center;
+	}
+	/* ============粉丝关注 */
+	#div-fans {
+		width: 100%;
+	}
+	#div-fans:after{content:"";display:block;clear:both;}
+	
+	.fanul {
+		background-color: black;
+	}
+	
+	.lidiv {
+		display: flex;
+	}
+	
+	/* 粉丝关注的li */
+	.fansli {
+		/* border: 1px solid black; */
+		width: 450px;
+		height: 100px;
+		background-color: #efefef;
+		display: flex;
+		float: left;
+		margin-left: 50px;
+		margin-top: 20px;
+		border-radius: 5px;
+	}
+	
+	.fan-uldiv {
+		background-color: #0000FF;
+		width: 100%;
+		/* border: 1px white yellow; */
+		height: 100%;
+	}
+	
+	.fansuserimg {
+		width: 80px;
+		height: 80px;
+		margin-top: 10px;
+		margin-left: 10px;
+	}
+	
+	.faninfodiv {
+		/* border: 1px solid black; */
+		width: 200px;
+		/* display: flex; */
+		height: 80px;
+		/* background-color: #C9C9C9; */
+		margin-left: 15px;
+		margin-top: 10px;
+	}
+	
+	.fannamep {
+		color: #1e9fff;
+		margin-top: 10px;
+	}
+	
+	.faninfop {
+		color: black;
+		margin-top: 25px;
+	}
