@@ -1,5 +1,6 @@
 # YoungMusic音乐网
-2020.6-2020.7 完成
+
+开发时间：2020.6-2020.7 
 
 开发工具：Visual Studio 2019+SQL Server 2012+Postman+Visual Studio Code
 
